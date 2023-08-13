@@ -1,0 +1,32 @@
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>site roda</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <p></p>
+    <a class="container" href="#">
+        <div class="square"></div>
+    </a>
+
+    <script>
+        const quadrado = document.querySelector("a.container");
+        const angref = document.querySelector("p");
+        let angulo = 0;
+
+        quadrado.onclick = girar = () => {
+            if (angulo == 360)
+                angulo = 0;
+
+            angulo += 45;
+            angref.innerHTML = angulo + " deg";
+            angref.style = "color: rgb(" + (Math.random() * 255) + ", " + (Math.random() * 255) + ", " + (Math.random() * 255) + ");";
+
+            quadrado.style = "transform: rotate(" + angulo + "deg);";
+        }
+    </script>
+</body>
+</html>
